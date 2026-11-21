@@ -1,16 +1,27 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     background: linear-gradient(
         135deg,
         #6b3c7e,
         hsl(272, 71%, 32%),
         #361346
     );
+
     background-size: 400% 400%;
     min-height: 100vh;
+    min-height: 100dvh;
+
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     animation: folyvas 10s infinite;
 }
 
@@ -29,31 +40,47 @@ body{
 .Text_one {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    width: 40vw;
-    height: 18vh;
-    padding: 10px;
+
+    width: 100%;
+    max-width: 700px;
+    min-height: 120px;
+
+    padding: 20px;
+    box-sizing: border-box;
+
     text-align: center;
     margin: 0 auto;
+
     border-radius: 10px;
-    font-family:monospace;;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1.9);
+    font-family: monospace;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     transition: 0.7s ease-in-out;
 }
 
 
 .bongo-button {
     min-height: clamp(80px, 8.33vw, 120px);
-    padding: 15px;
+
+    width: 100%;
+    padding: clamp(10px, 2vw, 15px);
 
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
+
     border-radius: 10px;
     border: none;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
+
     font-family: monospace;
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 20px);
+
     box-shadow: 0 0 10px rgba(150, 50, 255, 0.2);
+
+    overflow-wrap: anywhere;
 }
 
 .bongo-button:hover {
@@ -63,16 +90,26 @@ body{
 
 .Bongo {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 150px), 1fr)
+    );
+
+    gap: clamp(8px, 2vw, 15px);
+
     background-color: rgba(0, 0, 0, 0.5);
-    width: 40vw;
-    height: 55vh;
-    padding: 8px;
+
+    width: 100%;
+    max-width: 900px;
+
+    min-height: 400px;
+
+    padding: 12px;
+    box-sizing: border-box;
+
     border-radius: 10px;
-    width: 60vw;
     margin: 30px auto;
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .bongo-button:disabled {
@@ -120,4 +157,47 @@ body{
     border-radius: 6px;
     cursor: pointer;
     font-family: monospace;
+}
+
+@media (max-width: 900px) {
+
+    .Text_one {
+        max-width: 600px;
+    }
+
+    .Bongo {
+        max-width: 700px;
+    }
+
+}
+
+/* MOBIL */
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .Text_one {
+        min-height: 100px;
+        padding: 15px;
+    }
+
+    .Bongo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 8px;
+        min-height: auto;
+    }
+
+    .bongo-button {
+        min-height: 75px;
+        font-size: 14px;
+    }
+
+    .Kesz-table {
+        width: 94%;
+        max-height: 85dvh;
+    }
+
 }

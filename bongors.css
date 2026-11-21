@@ -1,0 +1,124 @@
+body{
+    background: linear-gradient(
+        135deg,
+        #6b3c7e,
+        hsl(272, 71%, 32%),
+        #361346
+    );
+    background-size: 400% 400%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: folyvas 10s infinite;
+}
+
+@keyframes folyvas {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Text_one {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 40vw;
+    height: 18vh;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-family:monospace;;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1.9);
+    transition: 0.7s ease-in-out;
+}
+
+
+.bongo-button {
+    min-height: 120px;
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: monospace;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(150, 50, 255, 0.2);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bongo-button:hover {
+    background-color: #542477;
+    box-shadow: 0 0 15px rgba(150, 50, 255, 0.5);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.Bongo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40vw;
+    height: 55vh;
+    padding: 8px;
+    border-radius: 10px;
+    width: 60vw;
+    margin: 30px auto;
+}
+
+.bongo-button:disabled {
+    background-color: #7b2cbf; /* Élénkebb lila, hogy látszódjon: kipipálva */
+    color: #e0aaff;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.8);
+    cursor: not-allowed;
+    transform: scale(0.97);
+}
+
+/* Ne változzon a színe, ha fölé viszed az egeret lelockolva */
+.bongo-button:disabled:hover {
+    background-color: #7b2cbf;
+}
+
+/* A felugró ablakod */
+.Kesz-table {
+    display: none; /* Alapból rejtve */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    width: 40vw;
+    min-height: 36vh;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 13px;
+    box-shadow: 0 0 25px rgba(150, 50, 255, 0.6);
+    border: 1px solid #7b2cbf;
+    transition: 0.7s ease-in-out;
+}
+
+#bezaroGomb {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: monospace;
+}

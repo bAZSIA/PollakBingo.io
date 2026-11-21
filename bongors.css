@@ -54,13 +54,11 @@ body{
     font-family: monospace;
     font-size: 20px;
     box-shadow: 0 0 10px rgba(150, 50, 255, 0.2);
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .bongo-button:hover {
     background-color: #542477;
     box-shadow: 0 0 15px rgba(150, 50, 255, 0.5);
-    grid-template-columns: repeat(3, 1fr);
 }
 
 .Bongo {
@@ -74,6 +72,7 @@ body{
     border-radius: 10px;
     width: 60vw;
     margin: 30px auto;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .bongo-button:disabled {
